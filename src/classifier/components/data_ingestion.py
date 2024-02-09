@@ -5,7 +5,6 @@ import gdown
 
 from src.classifier.exception import CustomException
 from src.classifier.logger import logging
-from src.classifier.utils import get_size
 from src.classifier.entity.config_entity import DataIngestionConfig
 
 

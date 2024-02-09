@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import Any
 import base64
 
-from src.classifier.exception import CustomException
 from src.classifier.logger import logging
 
 
@@ -36,7 +35,9 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
     except BoxValueError:
         raise ValueError("yaml file is empty")
     except Exception as e:
-        raise CustomException(e, sys)
+        raise e
+
+
     
 
 
