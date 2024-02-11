@@ -1,10 +1,7 @@
 import tensorflow as tf
 from pathlib import Path
-import sys
 
-from src.classifier.config.configuration import TrainingConfig
-from src.classifier.exception import CustomException
-from src.classifier.logger import logging
+from src.classifier.entity.config_entity import TrainingConfig
 
 class Trainig:
     def __init__(self, config: TrainingConfig):

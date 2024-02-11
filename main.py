@@ -5,6 +5,7 @@ from src.classifier.exception import CustomException
 from src.classifier.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from src.classifier.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
 from src.classifier.pipeline.stage_03_model_training import ModelTrainingPipeline
+from src.classifier.pipeline.stage_04_model_evaluation import EvaluationPipeline
 
 
 Stage_Name = 'Data Ingestion Stage'
@@ -48,3 +49,15 @@ except Exception as e:
     logging.info(e)
     raise CustomException(e, sys)
 
+Stage_Name = 'Model Evaluation'
+
+if __name__ == '__main__':
+    try:
+        logging.info('*'*20)
+        logging.info(f"stage {Stage_Name} has started")
+        obj= EvaluationPipeline()
+        obj.main()
+        logging.info(f"stage {Stage_Name} has completed")
+    except Exception as e:
+        logging.info(e)
+        raise CustomException(e, sys)

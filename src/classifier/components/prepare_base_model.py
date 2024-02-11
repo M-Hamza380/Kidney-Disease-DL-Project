@@ -2,7 +2,7 @@ import tensorflow as tf
 from pathlib import Path
 import sys
 
-from src.classifier.config.configuration import PrepareBaseModelConfig
+from src.classifier.entity.config_entity import PrepareBaseModelConfig
 from src.classifier.exception import CustomException
 from src.classifier.logger import logging
 
