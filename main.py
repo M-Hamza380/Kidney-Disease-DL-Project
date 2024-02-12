@@ -15,7 +15,7 @@ try:
     logging.info(f'stage {Stage_Name} has started')
     data_ingestion = DataIngestionTrainingPipeline()
     data_ingestion.main()
-    logging.info(f'stage {Stage_Name} has completed')
+    logging.info(f'stage {Stage_Name} has completed\n\nx==========x')
 
 except Exception as e:
     logging.info(e)
@@ -29,7 +29,7 @@ try:
     logging.info(f'stage {Stage_Name} has started')
     prepare_base_model = PrepareBaseModelTrainingPipeline()
     prepare_base_model.main()
-    logging.info(f'stage {Stage_Name} has completed')
+    logging.info(f'stage {Stage_Name} has completed\n\nx==========x')
 
 except Exception as e:
     logging.info(e)
@@ -43,21 +43,21 @@ try:
     logging.info(f'stage {Stage_Name} has started')
     prepare_base_model = ModelTrainingPipeline()
     prepare_base_model.main()
-    logging.info(f'stage {Stage_Name} has completed')
+    logging.info(f'stage {Stage_Name} has completed\n\nx==========x')
 
 except Exception as e:
     logging.info(e)
     raise CustomException(e, sys)
 
+
 Stage_Name = 'Model Evaluation'
 
-if __name__ == '__main__':
-    try:
-        logging.info('*'*20)
-        logging.info(f"stage {Stage_Name} has started")
-        obj= EvaluationPipeline()
-        obj.main()
-        logging.info(f"stage {Stage_Name} has completed")
-    except Exception as e:
-        logging.info(e)
-        raise CustomException(e, sys)
+try:
+    logging.info('*'*20)
+    logging.info(f"stage {Stage_Name} has started ")
+    model_evalution = EvaluationPipeline()
+    model_evalution.main()
+    logging.info(f"stage {Stage_Name} has completed\n\nx==========x")
+except Exception as e:
+    logging.info(e)
+    raise CustomException(e, sys)
