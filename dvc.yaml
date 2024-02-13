@@ -1,11 +1,11 @@
 stages:
   data_ingestion:
-    cmd: pyhton src/classifier/pipeline/stage_01_data_ingestion.py
+    cmd: python src/classifier/pipeline/stage_01_data_ingestion.py
     deps:
       - src/classifier/pipeline/stage_01_data_ingestion.py
       - config/config.yaml
     outs:
-      - artifacts/data_ingestion/Kidnet-CT-Scan-data
+      - artifacts/data_ingestion/Kidney-CT-Scan-data
   
   prepare_base_model:
     cmd: python src/classifier/pipeline/stage_02_prepare_base_model.py
@@ -48,7 +48,7 @@ stages:
       - IMAGE_SIZE
       - BATCH_SIZE
     metrics:
-      - scores.json:
-        cache: False
+      - artifacts/score.json:
+          cache: false
 
 

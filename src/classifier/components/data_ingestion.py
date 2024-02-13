@@ -29,6 +29,7 @@ class DataIngestion:
             gdown.download(url, zip_download_dir)
             logging.info(f'Downloaded data from {dataset_url} into file {zip_download_dir}')
         except Exception as e:
+            print(f'Your URL found : {url}')
             raise CustomException(e, sys)
     
     def extract_zip_file(self):
