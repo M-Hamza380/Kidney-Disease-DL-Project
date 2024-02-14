@@ -153,6 +153,7 @@ cython_debug/
 
 
 artifacts/*
-dvc.lock/
+dvc.lock
+.dvcignore
 
 
