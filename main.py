@@ -44,7 +44,6 @@ try:
     prepare_base_model = ModelTrainingPipeline()
     prepare_base_model.main()
     logging.info(f'stage {Stage_Name} has completed\n\nx==========x')
-
 except Exception as e:
     logging.info(e)
     raise CustomException(e, sys)
